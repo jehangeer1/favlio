@@ -1,0 +1,107 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Note that some adapters may set a maximum length for the String type by default, please ensure your strings are long
+// enough when changing adapters.
+// See https://www.prisma.io/docs/orm/reference/prisma-schema-reference#string for more information
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Session {
+  id                  String    @id
+  shop                String
+  state               String
+  isOnline            Boolean   @default(false)
+  scope               String?
+  expires             DateTime?
+  accessToken         String
+  userId              BigInt?
+  firstName           String?
+  lastName            String?
+  email               String?
+  accountOwner        Boolean   @default(false)
+  locale              String?
+  collaborator        Boolean?  @default(false)
+  emailVerified       Boolean?  @default(false)
+  refreshToken        String?
+  refreshTokenExpires DateTime?
+}
+
+model ShopSettings {
+  shop         String   @id
+  primaryColor String   @default("#F97316")
+  buttonText   String   @default("Add to wishlist")
+  iconStyle    String   @default("outline")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Wishlist {
+  id         String          @id @default(cuid())
+  shop       String
+  customerId String?
+  guestId    String?
+  name       String          @default("My wishlist")
+  isDefault  Boolean         @default(true)
+  createdAt  DateTime        @default(now())
+  updatedAt  DateTime        @updatedAt
+  items      WishlistItem[]
+  events     WishlistEvent[]
+
+  @@unique([shop, customerId, name])
+  @@unique([shop, guestId, name])
+  @@index([shop, updatedAt])
+  @@index([shop, customerId])
+  @@index([shop, guestId])
+}
+
+model WishlistItem {
+  id            String   @id @default(cuid())
+  wishlistId    String
+  productId     String
+  variantId     String
+  productHandle String
+  productTitle  String
+  variantTitle  String?
+  imageUrl      String?
+  price         Decimal? @db.Decimal(12, 2)
+  currencyCode  String?  @db.VarChar(3)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  wishlist      Wishlist @relation(fields: [wishlistId], references: [id], onDelete: Cascade)
+
+  @@unique([wishlistId, variantId])
+  @@index([productId])
+  @@index([variantId])
+}
+
+model WishlistEvent {
+  id         String            @id @default(cuid())
+  shop       String
+  wishlistId String?
+  type       WishlistEventType
+  productId  String?
+  variantId  String?
+  customerId String?
+  guestId    String?
+  metadata   Json?
+  occurredAt DateTime          @default(now())
+  wishlist   Wishlist?         @relation(fields: [wishlistId], references: [id], onDelete: SetNull)
+
+  @@index([shop, type, occurredAt])
+  @@index([wishlistId, occurredAt])
+  @@index([productId, occurredAt])
+}
+
+enum WishlistEventType {
+  ITEM_ADDED
+  ITEM_REMOVED
+  WISHLIST_VIEWED
+  ADDED_TO_CART
+}

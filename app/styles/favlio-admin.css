@@ -1,0 +1,313 @@
+:root {
+  --favlio-accent: #f97316;
+  --favlio-accent-strong: #c2410c;
+  --favlio-accent-soft: #fff1e8;
+  --favlio-border: #d9d9d9;
+  --favlio-muted: #616161;
+  --favlio-surface: #ffffff;
+}
+
+.favlio-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 32px;
+}
+.favlio-table-toolbar,
+.favlio-customer-toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid var(--favlio-border);
+}
+.favlio-table-toolbar s-search-field,
+.favlio-feature-search s-search-field {
+  flex: 1;
+}
+.favlio-product-thumb {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #fff, #f1f4f8);
+  font-size: 24px;
+}
+.favlio-empty {
+  padding: 36px 20px;
+  color: var(--favlio-muted);
+  text-align: center;
+}
+
+.favlio-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 20px;
+}
+.favlio-metric-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.favlio-metric-strip > div,
+.favlio-chart-card,
+.favlio-feature-card {
+  background: var(--favlio-surface);
+  border: 1px solid var(--favlio-border);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 8%);
+}
+.favlio-metric-strip > div {
+  display: grid;
+  gap: 4px;
+  padding: 18px;
+}
+.favlio-metric-strip span {
+  color: var(--favlio-muted);
+  font-size: 13px;
+}
+.favlio-metric-strip strong {
+  font-size: 28px;
+  line-height: 1.1;
+}
+.favlio-metric-strip small {
+  color: #29845a;
+}
+.favlio-analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.favlio-chart-card {
+  min-height: 330px;
+  padding: 18px;
+}
+.favlio-chart-card h2,
+.favlio-feature-card h2 {
+  margin: 0 0 5px;
+  font-size: 15px;
+}
+.favlio-chart-card p,
+.favlio-feature-card > p {
+  margin: 0;
+  color: var(--favlio-muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+.favlio-line-chart {
+  width: 100%;
+  margin-top: 20px;
+  overflow: visible;
+}
+.favlio-line-chart line {
+  stroke: #e8e8e8;
+  stroke-width: 1;
+}
+.favlio-line-chart path {
+  fill: none;
+  stroke: var(--favlio-accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.favlio-line-chart text {
+  fill: #7b7b7b;
+  font-size: 11px;
+}
+.favlio-bars {
+  display: grid;
+  gap: 9px;
+  margin-top: 22px;
+}
+.favlio-bar-row {
+  display: grid;
+  grid-template-columns: minmax(155px, 42%) 1fr;
+  gap: 10px;
+  align-items: center;
+  color: #696969;
+  font-size: 11px;
+}
+.favlio-bar-row > div {
+  height: 8px;
+  border-radius: 3px;
+  background: #edf1f5;
+  overflow: hidden;
+}
+.favlio-bar-row i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--favlio-accent);
+}
+
+.favlio-customer-toolbar {
+  justify-content: space-between;
+}
+.favlio-segments,
+.favlio-filter-row {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.favlio-segments button,
+.favlio-filter-row button {
+  padding: 7px 12px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: #303030;
+  cursor: pointer;
+  font: inherit;
+}
+.favlio-segments button.active,
+.favlio-filter-row button.active {
+  background: var(--favlio-accent-soft);
+  color: var(--favlio-accent-strong);
+  font-weight: 600;
+}
+.favlio-customer-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.favlio-customer-actions s-search-field {
+  width: 260px;
+}
+.favlio-customer-name {
+  display: grid;
+  gap: 2px;
+}
+.favlio-customer-name small {
+  color: var(--favlio-muted);
+}
+
+.favlio-feature-search {
+  display: flex;
+  margin-bottom: 12px;
+}
+.favlio-filter-row {
+  margin-bottom: 18px;
+}
+.favlio-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.favlio-feature-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 380px;
+  padding: 16px;
+}
+.favlio-card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.favlio-card-heading h2 {
+  font-size: 16px;
+}
+.favlio-type-badge {
+  flex: none;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: #ffddb8;
+  color: #7c2d12;
+  font-size: 12px;
+  line-height: 1.35;
+}
+.favlio-feature-preview {
+  position: relative;
+  height: 170px;
+  margin-bottom: 14px;
+  padding: 16px;
+  overflow: hidden;
+  border: 1px solid #dde3ea;
+  border-radius: 9px;
+  background: linear-gradient(150deg, #f8fbfd, #edf2f7);
+}
+.preview-line {
+  display: block;
+  width: 36%;
+  height: 8px;
+  margin-bottom: 8px;
+  border-radius: 3px;
+  background: #b9c6d5;
+}
+.preview-line.wide {
+  width: 62%;
+}
+.preview-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  height: 76px;
+  margin-top: 18px;
+}
+.preview-content > span {
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px #e1e7ee;
+}
+.preview-content .preview-heart {
+  color: var(--favlio-accent);
+  font-size: 25px;
+  background: var(--favlio-accent-soft);
+}
+.preview-action {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  padding: 6px 10px;
+  border: 1px solid var(--favlio-accent);
+  border-radius: 5px;
+  background: #fff;
+  color: var(--favlio-accent-strong);
+  font-size: 10px;
+  font-weight: 600;
+}
+.favlio-feature-card > p {
+  flex: 1;
+  min-height: 58px;
+}
+.favlio-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+@media (max-width: 900px) {
+  .favlio-feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .favlio-metric-strip,
+  .favlio-analytics-grid,
+  .favlio-feature-grid {
+    grid-template-columns: 1fr;
+  }
+  .favlio-table-toolbar,
+  .favlio-customer-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .favlio-customer-actions s-search-field {
+    width: auto;
+    flex: 1;
+  }
+  .favlio-feature-card {
+    min-height: 350px;
+  }
+}
