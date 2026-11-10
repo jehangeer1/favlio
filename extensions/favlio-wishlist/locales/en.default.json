@@ -1,0 +1,7 @@
+{
+  "wishlist": {
+    "add": "Add to wishlist",
+    "remove": "Remove from wishlist",
+    "error": "Unable to update wishlist"
+  }
+}

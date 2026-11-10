@@ -1,7 +1,7 @@
 :root {
-  --favlio-accent: #f97316;
-  --favlio-accent-strong: #c2410c;
-  --favlio-accent-soft: #fff1e8;
+  --favlio-accent: #7212da;
+  --favlio-accent-strong: #4c079e;
+  --favlio-accent-soft: #f3e8ff;
   --favlio-border: #d9d9d9;
   --favlio-muted: #616161;
   --favlio-surface: #ffffff;
@@ -11,6 +11,213 @@
   max-width: 1200px;
   margin: 0 auto;
   padding-bottom: 32px;
+}
+.favlio-feature-shell {
+  max-width: 1480px;
+}
+.favlio-home-shell {
+  display: grid;
+  gap: 16px;
+}
+.favlio-home-primary-action {
+  margin-top: 16px;
+}
+.favlio-home-brand {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+}
+.favlio-home-brand > img {
+  width: 104px;
+  height: 104px;
+  border: 1px solid var(--favlio-border);
+  border-radius: 16px;
+  object-fit: cover;
+}
+.favlio-setup-progress {
+  height: 7px;
+  margin: 4px 0 18px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e7e7e7;
+}
+.favlio-setup-progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--favlio-accent);
+  transition: width 220ms ease;
+}
+.favlio-setup-list {
+  display: grid;
+  gap: 10px;
+}
+.favlio-setup-step {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 10px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #f6f6f6;
+}
+.favlio-setup-step strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #303030;
+  font-size: 13px;
+}
+.favlio-setup-step p {
+  margin: 0 0 10px;
+  color: var(--favlio-muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+.favlio-step-marker {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border: 2px dashed #b5b5b5;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+.favlio-step-marker.complete {
+  border-color: #29845a;
+  background: #29845a;
+}
+.favlio-home-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.favlio-home-metrics > div {
+  display: grid;
+  gap: 6px;
+  padding: 18px;
+}
+.favlio-home-metrics > div + div {
+  border-left: 1px solid var(--favlio-border);
+}
+.favlio-home-metrics span {
+  color: var(--favlio-muted);
+  font-size: 12px;
+}
+.favlio-home-metrics strong {
+  color: #303030;
+  font-size: 22px;
+}
+.favlio-home-carousel {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  min-height: 260px;
+  overflow: hidden;
+  border-radius: 13px;
+  background:
+    radial-gradient(circle at 80% 25%, rgb(255 255 255 / 24%), transparent 28%),
+    linear-gradient(125deg, #2e075f 0%, #7212da 52%, #a855f7 100%);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 14%);
+  color: #fff;
+}
+.favlio-carousel-copy {
+  z-index: 1;
+  align-self: center;
+  max-width: 590px;
+  padding: 40px;
+}
+.favlio-carousel-copy > span {
+  display: inline-block;
+  margin-bottom: 9px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 17%);
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.favlio-carousel-copy h2 {
+  max-width: 520px;
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: clamp(23px, 3vw, 36px);
+  line-height: 1.08;
+}
+.favlio-carousel-copy p {
+  max-width: 520px;
+  margin: 0 0 20px;
+  color: rgb(255 255 255 / 86%);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.favlio-carousel-art {
+  position: relative;
+  min-height: 250px;
+}
+.favlio-art-card {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 55%);
+  border-radius: 14px;
+  background: rgb(255 255 255 / 94%);
+  box-shadow: 0 20px 45px rgb(85 22 4 / 28%);
+  color: var(--favlio-accent);
+  font-weight: 750;
+}
+.favlio-art-card.card-one {
+  top: 35px;
+  right: 140px;
+  width: 110px;
+  height: 145px;
+  transform: rotate(-8deg);
+  font-size: 46px;
+}
+.favlio-art-card.card-two {
+  top: 65px;
+  right: 45px;
+  width: 150px;
+  height: 160px;
+  transform: rotate(7deg);
+  font-size: 24px;
+}
+.favlio-art-card.card-two img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+.favlio-art-card.card-three {
+  right: 205px;
+  bottom: 28px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #f3e8ff;
+  font-size: 20px;
+}
+.favlio-carousel-dots {
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  display: flex;
+  gap: 6px;
+}
+.favlio-carousel-dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 45%);
+  cursor: pointer;
+}
+.favlio-carousel-dots button[aria-pressed="true"] {
+  width: 22px;
+  border-radius: 999px;
+  background: #fff;
 }
 .favlio-table-toolbar,
 .favlio-customer-toolbar {
@@ -33,6 +240,12 @@
   border-radius: 8px;
   background: linear-gradient(145deg, #fff, #f1f4f8);
   font-size: 24px;
+}
+.favlio-product-thumb img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
 }
 .favlio-empty {
   padding: 36px 20px;
@@ -194,7 +407,7 @@
 }
 .favlio-feature-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
 .favlio-feature-card {
@@ -217,8 +430,8 @@
   flex: none;
   padding: 3px 9px;
   border-radius: 999px;
-  background: #ffddb8;
-  color: #7c2d12;
+  background: #e9d5ff;
+  color: #581c87;
   font-size: 12px;
   line-height: 1.35;
 }
@@ -286,6 +499,12 @@
   margin-top: 16px;
 }
 
+@media (max-width: 1250px) {
+  .favlio-feature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 900px) {
   .favlio-feature-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -309,5 +528,28 @@
   }
   .favlio-feature-card {
     min-height: 350px;
+  }
+  .favlio-home-metrics {
+    grid-template-columns: 1fr;
+  }
+  .favlio-home-metrics > div + div {
+    border-top: 1px solid var(--favlio-border);
+    border-left: 0;
+  }
+  .favlio-home-carousel {
+    grid-template-columns: 1fr;
+  }
+  .favlio-carousel-copy {
+    padding: 30px 24px 8px;
+  }
+  .favlio-carousel-art {
+    min-height: 210px;
+  }
+  .favlio-home-brand {
+    grid-template-columns: 76px minmax(0, 1fr);
+  }
+  .favlio-home-brand > img {
+    width: 76px;
+    height: 76px;
   }
 }

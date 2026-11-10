@@ -35,11 +35,31 @@ model Session {
 
 model ShopSettings {
   shop         String   @id
-  primaryColor String   @default("#F97316")
+  primaryColor String   @default("#7212DA")
   buttonText   String   @default("Add to wishlist")
   iconStyle    String   @default("outline")
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+}
+
+model CollectionButtonSettings {
+  shop                  String   @id
+  enabled               Boolean  @default(false)
+  placement             String   @default("top_right")
+  customPosition        Boolean  @default(false)
+  backgroundColor       String   @default("#FFFFFFE8")
+  activeBackgroundColor String   @default("#7212DA")
+  padding               Int      @default(5)
+  borderRadius          Int      @default(50)
+  showOnHover           Boolean  @default(true)
+  overrideIconStyle     Boolean  @default(true)
+  iconStyle             String   @default("heart")
+  iconAnimation         String   @default("none")
+  iconColor             String   @default("#737373")
+  activeIconColor       String   @default("#FFFFFF")
+  iconSize              Int      @default(22)
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
 }
 
 model Wishlist {

@@ -1,0 +1,123 @@
+.favlio-product-anchor {
+  position: relative !important;
+}
+
+.favlio-wishlist-button {
+  position: absolute;
+  z-index: 8;
+  display: grid;
+  place-items: center;
+  min-width: 34px;
+  min-height: 34px;
+  margin: 0;
+  border: 1px solid rgb(0 0 0 / 8%);
+  border-radius: var(--favlio-radius, 50%);
+  background: var(--favlio-background, rgb(255 255 255 / 91%));
+  box-shadow: 0 3px 12px rgb(0 0 0 / 14%);
+  color: var(--favlio-icon-color, #737373);
+  cursor: pointer;
+  font: inherit;
+  font-size: var(--favlio-icon-size, 22px);
+  line-height: 1;
+  padding: var(--favlio-padding, 5px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease,
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.favlio-wishlist-button[data-placement="top_left"] {
+  top: 12px;
+  left: 12px;
+}
+
+.favlio-wishlist-button[data-placement="top_right"] {
+  top: 12px;
+  right: 12px;
+}
+
+.favlio-wishlist-button[data-placement="bottom_left"] {
+  bottom: 12px;
+  left: 12px;
+}
+
+.favlio-wishlist-button[data-placement="bottom_right"] {
+  right: 12px;
+  bottom: 12px;
+}
+
+.favlio-wishlist-button[aria-pressed="true"] {
+  background: var(--favlio-active-background, #7212da);
+  color: var(--favlio-active-icon-color, #fff);
+}
+
+.favlio-wishlist-button:hover,
+.favlio-wishlist-button:focus-visible {
+  opacity: 1 !important;
+  transform: scale(1.08);
+}
+
+.favlio-wishlist-button:focus-visible {
+  outline: 2px solid #005bd3;
+  outline-offset: 2px;
+}
+
+.favlio-wishlist-button:disabled {
+  cursor: progress;
+  opacity: 0.65;
+}
+
+.favlio-hover-only {
+  opacity: 0;
+}
+
+.favlio-product-card:hover .favlio-hover-only,
+.favlio-product-card:focus-within .favlio-hover-only,
+.favlio-product-anchor:hover .favlio-hover-only,
+.favlio-product-anchor:focus-within .favlio-hover-only {
+  opacity: 1;
+}
+
+.favlio-animation-pulse {
+  animation: favlio-pulse 1.6s ease-in-out infinite;
+}
+
+.favlio-animation-bounce {
+  animation: favlio-bounce 1.5s ease-in-out infinite;
+}
+
+.favlio-animation-rotate {
+  animation: favlio-rotate 3s linear infinite;
+}
+
+@keyframes favlio-pulse {
+  50% {
+    transform: scale(1.13);
+  }
+}
+
+@keyframes favlio-bounce {
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes favlio-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (hover: none) {
+  .favlio-hover-only {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .favlio-wishlist-button {
+    animation: none;
+    transition: none;
+  }
+}

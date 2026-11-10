@@ -30,9 +30,15 @@ export default function App() {
   return (
     <div className={styles.index}>
       <div className={styles.content}>
-        <h1 className={styles.heading}>A short heading about [your app]</h1>
+        <img
+          className={styles.logo}
+          src="/favlio-icon.png"
+          alt="Favlio Wishlist"
+        />
+        <h1 className={styles.heading}>Favlio Wishlist</h1>
         <p className={styles.text}>
-          A tagline about [your app] that describes your value proposition.
+          Help shoppers save favorite products and return when they are ready to
+          buy.
         </p>
         {showForm && (
           <Form className={styles.form} method="post">
@@ -48,16 +54,16 @@ export default function App() {
         )}
         <ul className={styles.list}>
           <li>
-            <strong>Product feature</strong>. Some detail about your feature and
-            its benefit to your customer.
+            <strong>Customizable buttons</strong>. Match wishlist actions to
+            your storefront style.
           </li>
           <li>
-            <strong>Product feature</strong>. Some detail about your feature and
-            its benefit to your customer.
+            <strong>Guest wishlists</strong>. Let shoppers save products without
+            signing in.
           </li>
           <li>
-            <strong>Product feature</strong>. Some detail about your feature and
-            its benefit to your customer.
+            <strong>Wishlist insights</strong>. See which products your
+            customers save most often.
           </li>
         </ul>
       </div>

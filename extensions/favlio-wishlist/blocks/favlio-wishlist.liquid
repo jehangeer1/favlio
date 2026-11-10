@@ -1,0 +1,19 @@
+<div
+  id="favlio-wishlist-root"
+  data-endpoint="/apps/favlio-wishlist"
+  data-page-type="{{ request.page_type | escape }}"
+  data-currency="{{ cart.currency.iso_code | default: shop.currency | escape }}"
+  data-add-label="{{ 'wishlist.add' | t | escape }}"
+  data-remove-label="{{ 'wishlist.remove' | t | escape }}"
+  data-error-label="{{ 'wishlist.error' | t | escape }}"
+></div>
+
+{% schema %}
+{
+  "name": "t:app_embed.name",
+  "target": "body",
+  "javascript": "favlio-wishlist.js",
+  "stylesheet": "favlio-wishlist.css",
+  "settings": []
+}
+{% endschema %}

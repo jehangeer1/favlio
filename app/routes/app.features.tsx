@@ -202,8 +202,12 @@ export default function Features() {
   );
 
   return (
-    <s-page heading="All features">
-      <div className="favlio-shell">
+    <s-page heading="All features" inlineSize="large">
+      <s-app-window
+        id="collection-button-settings-window"
+        src="/app/features/collection-button"
+      />
+      <div className="favlio-shell favlio-feature-shell">
         <div className="favlio-feature-search">
           <s-search-field
             label="Search features"
@@ -257,7 +261,18 @@ export default function Features() {
                     }
                   />
                 )}
-                {feature.customizable && <s-button>Customize</s-button>}
+                {feature.customizable && (
+                  <s-button
+                    {...(feature.id === "collection-button"
+                      ? {
+                          command: "--show" as const,
+                          commandFor: "collection-button-settings-window",
+                        }
+                      : {})}
+                  >
+                    Customize
+                  </s-button>
+                )}
               </div>
             </article>
           ))}

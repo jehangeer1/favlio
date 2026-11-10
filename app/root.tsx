@@ -6,6 +6,9 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="theme-color" content="#7212DA" />
+        <link rel="icon" type="image/png" href="/favlio-icon.png" />
+        <link rel="apple-touch-icon" href="/favlio-icon.png" />
         <link rel="preconnect" href="https://cdn.shopify.com/" />
         <link
           rel="stylesheet"
